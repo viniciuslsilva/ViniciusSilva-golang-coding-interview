@@ -53,6 +53,8 @@ func listenAndServe(port string) {
 	e.GET("api/states", getStatesJson)
 	e.GET("api/categories", getCategoriesJson)
 
+	e.GET("api/report", getArmsReport)
+
 	// Start server
 	e.Logger.Fatal(e.Start(":" + port))
 }

@@ -61,6 +61,19 @@ func getCategoriesJson(c echo.Context) error {
 	return c.JSON(http.StatusOK, categories)
 }
 
+func getArmsReport(c echo.Context) error {
+	reportsData, err := FetchReport()
+	if err != nil {
+		return err
+	}
+
+	if err := c.Bind(reportsData.Report); err != nil {
+		return err
+	}
+
+	return c.JSON(http.StatusOK, reportsData.Report)
+}
+
 // Helpers
 
 func execTemplateFromBase(title, templateName string, p params) string {

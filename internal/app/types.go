@@ -13,3 +13,8 @@ type StatesResponse struct {
 	BaseResponse
 	States []models.State `json:"data"`
 }
+
+type ReportResponse struct {
+	BaseResponse
+	Report []models.Report `json:"data"`
+}
